@@ -1,3 +1,9 @@
 spring:
   application:
     name: heartsync-server
+
+  datasource:
+    url:
+    username: user
+    password: pw
+    driver-class-name: org.h2.Driver
