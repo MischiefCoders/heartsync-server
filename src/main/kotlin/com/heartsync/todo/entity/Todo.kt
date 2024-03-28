@@ -7,16 +7,17 @@ import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 
 @Entity
-data class Todo (
+class Todo(
     @Column(name = "todo_content")
-    var todoContent: String
-) {
+    var todoContent: String,
 
     @Column(name = "is_completed")
     var isCompleted: Boolean = false
+) {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "todo_id")
-    var todoId: Long = 0L
+    val todoId: Long = 0L
+
 }

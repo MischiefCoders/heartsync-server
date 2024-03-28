@@ -10,8 +10,8 @@ import java.security.InvalidParameterException
 class TodoService(val todoRepository: TodoRepository) {
 
     fun addTodo(todo: Todo): Todo {
-        val save = todoRepository.save(todo)
-        return save
+        val saved = todoRepository.save(todo)
+        return saved
     }
 
     fun getTodo(id: Long): Todo {
@@ -37,6 +37,7 @@ class TodoService(val todoRepository: TodoRepository) {
             .orElseThrow { throw InvalidParameterException("존재하지 않는 todo") }
 
         todo.isCompleted = isCompleted
+        todoRepository.save(todo)
     }
 
     fun deleteTodo(id: Long) {

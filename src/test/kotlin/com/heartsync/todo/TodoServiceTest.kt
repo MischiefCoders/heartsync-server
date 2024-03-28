@@ -86,6 +86,7 @@ class TodoServiceTest(
 
         // then
         assertThat(updated.todoId).isEqualTo(todo.todoId)
+        assertThat(updated.todoContent).isEqualTo(todo.todoContent)
     }
 
     @Test
